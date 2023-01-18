@@ -1,0 +1,69 @@
+Skip to content
+Search or jump to…
+Pull requests
+Issues
+Codespaces
+Marketplace
+Explore
+ 
+@xrizbea 
+devemdobro
+/
+devemdobro
+Public
+Fork your own copy of devemdobro/devemdobro
+Code
+Issues
+Pull requests
+1
+Actions
+Projects
+Security
+Insights
+devemdobro/.github/workflows/cobrinha.yml
+@devemdobro
+devemdobro Create cobrinha.yml
+Latest commit 0c38c9a on Oct 13, 2021
+ History
+ 1 contributor
+25 lines (22 sloc)  583 Bytes
+
+name: Generate Datas
+
+on:
+  schedule: # execute every 12 hours
+    - cron: "* */12 * * *"
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: Jobs to update datas
+    runs-on: ubuntu-latest
+    steps:
+      # Snake Animation
+      - uses: Platane/snk@master
+        id: snake-gif
+        with:
+          github_user_name: xrizbea
+          svg_out_path: dist/github-contribution-grid-snake.svg
+
+      - uses: crazy-max/ghaction-github-pages@v2.1.3
+        with:
+          target_branch: output
+          build_dir: dist
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+Footer
+© 2023 GitHub, Inc.
+Footer navigation
+Terms
+Privacy
+Security
+Status
+Docs
+Contact GitHub
+Pricing
+API
+Training
+Blog
+About
